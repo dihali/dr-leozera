@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Leozeras | Advogado Empresarial — Ribeirão Preto/SP e Brasil</title>
+    <meta name="description" content="Advogado empresarial com 16 anos de experiência e mais de 10.000 clientes atendidos. Proteção jurídica para sua empresa. Consulta gratuita pelo WhatsApp.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #F9F7F2; color: #2D2D2D; scroll-behavior: smooth; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        /* HEADER */
+        .glass-header { background: rgba(249,247,242,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(114,28,36,0.1); }
+
+        /* BOTÕES */
+        .wine-button { background: #722024; color: white; padding: 14px 28px; border-radius: 9999px; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+        .wine-button:hover { background: #8B2635; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(114,32,36,0.25); }
+        .outline-wine-button { border: 1.5px solid #722024; color: #722024; padding: 14px 28px; border-radius: 9999px; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center; }
+        .outline-wine-button:hover { background: #722024; color: white; }
+        .wa-button { background: #25D366; color: white; padding: 14px 28px; border-radius: 9999px; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+        .wa-button:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(37,211,102,0.25); }
+
+        /* CARDS */
+        .card { background: white; padding: 32px; border-radius: 24px; border: 1px solid rgba(114,32,36,0.06); transition: all 0.5s; height: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: rgba(114,32,36,0.2); }
+
+        /* SCROLL REVEAL */
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+        .reveal-delay-6 { transition-delay: 0.6s; }
+
+        /* KEN BURNS */
+        .hero-img { animation: kenBurns 10s ease-out forwards; transform-origin: center top; }
+        @keyframes kenBurns {
+            0% { transform: scale(1.12); filter: brightness(0.3); }
+            100% { transform: scale(1); filter: brightness(0.42); }
+        }
+        .hero-content-anim { animation: fadeUp 1.4s ease-out 0.8s forwards; opacity: 0; }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* FAQ */
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-icon { transition: transform 0.3s; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-item.open { border-color: rgba(114,32,36,0.3) !important; }
+        .faq-item.open .faq-q { border-left-color: #722024 !important; }
+
+        /* HAMBURGER */
+        .hamburger span { display: block; width: 26px; height: 2px; background: #722024; border-radius: 2px; transition: all 0.3s; }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+        /* WA FLOAT */
+        .wa-float { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#inicio" class="flex items-center gap-3">
+                <img src="[LOGO]" class="h-20 w-auto" alt="Logo Dr. Leozeras">
+            </a>
+            <nav class="hidden md:flex gap-8 text-[10px] uppercase tracking-[0.2em] font-bold">
+                <a href="#especialidades" class="hover:text-[#722024] transition-colors text-[#2D2D2D]/60">Especialidades</a>
+                <a href="#sobre" class="hover:text-[#722024] transition-colors text-[#2D2D2D]/60">Sobre</a>
+                <a href="#depoimentos" class="hover:text-[#722024] transition-colors text-[#2D2D2D]/60">Depoimentos</a>
+                <a href="#faq" class="hover:text-[#722024] transition-colors text-[#2D2D2D]/60">FAQ</a>
+                <a href="#contato" class="hover:text-[#722024] transition-colors text-[#2D2D2D]/60">Contato</a>
+            </nav>
+            <a href="https://wa.me/5534991812371?text=Olá+Dr.+Leozeras!+Vi+seu+site+e+quero+agendar+uma+consulta+gratuita.+%F0%9F%98%8A" target="_blank" class="hidden md:flex wine-button text-[10px] uppercase tracking-widest px-6 py-2 min-h-[48px]">Consulta Gratuita</a>
+            <div class="hamburger md:hidden flex flex-col gap-[5px] cursor-pointer p-2 z-[60]" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 z-50 hidden flex-col items-center justify-center gap-10 bg-[#F9F7F2]" id="mobileMenu">
+        <a href="#especialidades" onclick="closeMenu()" class="font-serif text-3xl text-[#2D2D2D] hover:text-[#722024] transition-colors">Especialidades</a>
+        <a href="#sobre" onclick="closeMenu()" class="font-serif text-3xl text-[#2D2D2D] hover:text-[#722024] transition-colors">Sobre</a>
+        <a href="#depoimentos" onclick="closeMenu()" class="font-serif text-3xl text-[#2D2D2D] hover:text-[#722024] transition-colors">Depoimentos</a>
+        <a href="#faq" onclick="closeMenu()" class="font-serif text-3xl text-[#2D2D2D] hover:text-[#722024] transition-colors">FAQ</a>
+        <a href="https://wa.me/5534991812371?text=Olá+Dr.+Leozeras!+Vi+seu+site+e+quero+agendar+uma+consulta+gratuita.+%F0%9F%98%8A" target="_blank" onclick="closeMenu()" class="wa-button text-lg px-10 min-h-[48px]">📲 WhatsApp</a>
+    </div>
+
+    <!-- HERO -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20">
+        <div class="absolute inset-0">
+            <img src="[FOTO]" class="hero-img w-full h-full object-cover object-top" alt="Dr. Leozeras">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/75"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-6 max-w-4xl hero-content-anim">
+            <p class="text-[#D4808A] tracking-[0.4em] uppercase text-xs md:text-sm mb-6 font-semibold border border-[#D4808A]/40 inline-block px-5 py-2 rounded-full">⚖️ Advogado Empresarial · OAB/MG 113344 · Ribeirão Preto · Brasil</p>
+            <h1 class="text-4xl md:text-7xl font-serif mb-6 leading-tight">Dr. Leozeras</h1>
+            <p class="text-xl md:text-3xl font-serif italic text-[#D4808A] mb-6 leading-tight max-w-2xl mx-auto">"Sua empresa merece uma proteção jurídica tão sólida quanto o seu trabalho."</p>
+            <p class="text-base md:text-lg mb-10 text-white/80 font-light">16 anos de experiência · +10.000 clientes atendidos · Atendimento online em todo o Brasil</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5534991812371?text=Olá+Dr.+Leozeras!+Vi+seu+site+e+quero+agendar+uma+consulta+gratuita.+%F0%9F%98%8A" target="_blank" class="wa-button text-lg px-10 min-h-[48px]">📲 Falar com o Dr. Leozeras</a>
+                <a href="#especialidades" class="outline-wine-button border-white text-white hover:bg-white hover:text-[#722024] text-lg px-10 min-h-[48px]">Conhecer Especialidades</a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 mt-10 text-white/60 text-xs font-medium">
+                <span>⭐⭐⭐⭐⭐ Referência em Direito Empresarial</span>
+                <span>· +10.000 empresas assessoradas</span>
+                <span>· 🇧🇷 Brasil todo</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- NÚMEROS -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="text-center reveal reveal-delay-1">
+                <div class="text-3xl md:text-5xl font-serif font-bold text-[#2D2D2D] mb-2" data-target="10000">0</div>
+                <div class="text-[10px] uppercase tracking-widest text-[#2D2D2D]/50 font-bold">Clientes Atendidos</div>
+            </div>
+            <div class="text-center reveal reveal-delay-2">
+                <div class="text-3xl md:text-5xl font-serif font-bold text-[#2D2D2D] mb-2">16 Anos</div>
+                <div class="text-[10px] uppercase tracking-widest text-[#2D2D2D]/50 font-bold">De Experiência</div>
+            </div>
+            <div class="text-center reveal reveal-delay-3">
+                <div class="text-3xl md:text-5xl font-serif font-bold text-[#2D2D2D] mb-2">Online</div>
+                <div class="text-[10px] uppercase tracking-widest text-[#2D2D2D]/50 font-bold">Todo o Brasil</div>
+            </div>
+            <div class="text-center reveal reveal-delay-4">
+                <div class="text-3xl md:text-5xl font-serif font-bold text-[#2D2D2D] mb-2">OAB/MG</div>
+                <div class="text-[10px] uppercase tracking-widest text-[#2D2D2D]/50 font-bold">113344 Ativo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPECIALIDADES -->
+    <section id="especialidades" class="py-20 md:py-32 px-6 bg-[#F9F7F2]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="text-[#722024] uppercase tracking-[0.3em] text-xs mb-4 font-bold">⚖️ Especialidades</p>
+                <h2 class="text-3xl md:text-5xl font-serif text-[#2D2D2D] mb-4">Proteção jurídica completa<br>para o seu negócio.</h2>
+                <p class="text-[#2D2D2D]/60 max-w-xl mx-auto text-sm leading-relaxed">Do contrato social à resolução de conflitos — com 16 anos de experiência, o Dr. Leozeras cuida de cada detalhe jurídico da sua empresa.</p>
+                <div class="h-px bg-[#722024] w-16 mx-auto mt-8"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="card reveal reveal-delay-1">
+                    <div class="w-14 h-14 bg-[#FDF0F1] rounded-full flex items-center justify-center mb-5 text-2xl">🏢</div>
+                    <h3 class="text-xl font-serif mb-3 text-[#2D2D2D]">Constituição e Estruturação de Empresas</h3>
+                    <p class="text-sm text-[#2D2D2D]/60 leading-relaxed mb-5">Abertura de empresa, elaboração de contrato social, escolha do regime tributário ideal e blindagem patrimonial. Tudo para sua empresa nascer no caminho certo.</p>
+                    <a href="https://wa.me/5534991812371?text=Olá+Dr.+Leozeras!+Vi+seu+site+e+quero+agendar+uma+consulta+gratuita.+%F0%9F%98%8A" target="_blank" class="text-[#722024] text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all hover:gap-3">Quero proteger minha empresa →</a>
+                </div>
+                <div class="card reveal reveal-delay-2">
+                    <div class="w-14 h-14 bg-[#FDF0F1] rounded-full flex items-center justify-center mb-5 text-2xl">📝</div>
+                    <h3 class="text-xl font-serif mb-3 text-[#2D2D2D]">Contratos Empresariais</h3>
+                    <p class="text-sm text-[#2D2D2D]/60 leading-relaxed mb-5">Elaboração, análise e revisão de contratos comerciais, de prestação de serviços, parcerias e franquias. Contratos bem feitos evitam processos caros no futuro.</p>
+                    <a href="https://wa.me/5534991812371?text=Olá+Dr.+Leozeras!+Vi+seu+site+e+quero+agendar+uma+consulta+gratuita.+%F0%9F%98%8A" target="_blank" class="text-[#722024] text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all hover:gap-3">Quero proteger minha empresa →</a>
+                </div>
+                <div class="card reveal reveal-delay-3">
+                    <div class="w-14 h-14 bg-[#FDF0F1] rounded-full flex items-center justify-center mb-5 text-2xl">⚖️</div>
+                    <h3 class="text-xl font-serif mb-3 text-[#2D2D2D]">Resolução de Conflitos Empresariais</h3>
+                    <p class="text-sm text-[#2D2D2D]/60 leading-relaxed mb-5">Disputas entre sócios, inadimplência, rescisão contratual e litígios comerciais. Representação estratégica para proteger os interesses da sua empresa dentro e fora do tribunal.</p>
+                    <a href="https://wa.me/5534991812371?text=Olá+Dr.+Leozeras!+Vi+seu+site+e+quero+agendar+uma+consulta+gratuita.+%F0%9F%98%8A" target="_blank" class="text-[#722024] text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all hover:gap-3">Quero proteger minha empresa →</a>
+                </div>
+                <div class="card reveal reveal-delay-4">
+                    <div class="w-14 h-14 bg-[#FDF0F1] rounded-full flex items-center justify-center mb-5 text-2xl">🛡️</div>
+                    <h3 class="text-xl font-serif mb-3 text-[#2D2D2D]">Compliance e Assessoria Jurídica Contínua</h3>
+                    <p class="text-sm text-[#2D2D2D]/60 leading-relaxed mb-5">Acompanhamento jurídico preventivo para empresas que querem crescer sem surpresas. Adequação à LGPD, gestão de riscos e consultoria estratégica permanente.</p>
+                    <a href="https://wa.me/5534991812371?text=Olá+Dr.+Leozeras!+Vi+seu+site+e+quero+agendar+uma+consulta+gratuita.+%F0%9F%98%8A" target="_blank" class="text-[#722024] text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all hover:gap-3">Quero proteger minha empresa →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="py-20 md:py-32 px-6 bg-white">
+        <div class="max-w-3xl mx-auto text-center reveal">
+            <p class="text-[#722024] uppercase tracking-[0.3em] text-xs mb-4 font-bold">Quem é o Dr. Leozeras</p>
+            <h2 class="text-3xl md:text-5xl font-serif mb-10 text-[#2D2D2D] leading-tight">16 anos construindo a segurança jurídica de empresas.</h2>
+            <div class="space-y-6 text-[#2D2D2D]/70 text-lg leading-relaxed">
+                <p>Com <strong class="text-[#2D2D2D]">16 anos de experiência</strong> em Direito Empresarial e mais de <strong class="text-[#2D2D2D]">10.000 clientes atendidos</strong>, o Dr. Leozeras se tornou referência em proteção jurídica para empresas de todos os tamanhos — de MEIs a grandes corporações.</p>
+                <p>Sediado em Ribeirão Preto com atendimento online para todo o Brasil, o Dr. Leozeras alia visão estratégica e conhecimento técnico profundo para entregar soluções que realmente funcionam no mundo real dos negócios.</p>
+                <p class="font-serif italic text-xl text-[#2D2D2D] border-l-4 border-[#722024] pl-6 text-left">"Uma empresa sem proteção jurídica é uma empresa vulnerável. Meu trabalho é garantir que você construa com segurança e cresça sem riscos desnecessários."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER -->
+    <section class="relative py-32 px-6 overflow-hidden flex items-center justify-center min-h-[60vh]">
+        <div class="absolute inset-0">
+            <img src="[FOTO]" class="w-full h-full object-cover" alt="Dr. Leozeras">
+            <div class="absolute inset-0 bg-black/65"></div>
+        </div>
+        <div class="relative z-10 text-center text-white max-w-4xl reveal">
+            <div class="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-8 border border-white/20 text-3xl">💼</div>
+            <p class="text-[#D4808A] uppercase tracking-widest text-xs mb-4 font-bold">Por que nos escolher</p>
+            <h2 class="text-3xl md:text-5xl font-serif mb-8">Seu negócio protegido.<br>Você no controle.</h2>
+            <p class="text-lg text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto">16 anos de experiência, mais de 10.000 empresas assessoradas e atendimento online em todo o Brasil. O Dr. Leozeras está pronto para ser o parceiro jurídico que sua empresa precisa.</p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-5 py-2 bg-white/10 backdrop-blur-md rounded-full text-[10px] uppercase font-bold text-[#D4808A] border border-white/10">Atendimento Estratégico</span>
+                <span class="px-5 py-2 bg-white/10 backdrop-blur-md rounded-full text-[10px] uppercase font-bold text-[#D4808A] border border-white/10">100% Online</span>
+                <span class="px-5 py-2 bg-white/10 backdrop-blur-md rounded-full text-[10px] uppercase font-bold text-[#D4808A] border border-white/10">16 Anos de Expertise</span>
+                <span class="px-5 py-2 bg-white/10 backdrop-blur-md rounded-full text-[10px] uppercase font-bold text-[#D4808A] border border-white/10">+10.000 Clientes</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="py-20 md:py-32 px-6 bg-[#F9F7F2]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="text-[#722024] uppercase tracking-[0.3em] text-xs mb-4 font-bold">Depoimentos</p>
+                <h2 class="text-3xl md:text-5xl font-serif text-[#2D2D2D]">O que dizem os clientes do Dr. Leozeras</h2>
+                <div class="h-px bg-[#722024] w-16 mx-auto mt-8"></div>
+            </div>
+            <div class="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0" id="depSlider">
+                <div class="min-w-[85vw] md:min-w-0 snap-center bg-white p-10 rounded-2xl shadow-sm border border-black/5 flex flex-col reveal reveal-delay-1">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex text-[#722024] gap-1">★★★★★</div>
+                        <span class="text-[10px] bg-red-50 text-[#722024] px-2 py-1 rounded font-bold uppercase tracking-wider">Verificado</span>
+                    </div>
+                    <p class="italic mb-8 text-[#2D2D2D]/70 leading-relaxed flex-grow">"O Dr. Leozeras salvou minha empresa de uma disputa societária que poderia ter me custado tudo. Profissional, estratégico e sempre disponível."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-[#FDF0F1] flex items-center justify-center text-[#722024] font-serif font-bold">R</div>
+                        <p class="font-serif font-bold text-lg text-[#2D2D2D]">Roberto M.</p>
+                    </div>
+                </div>
+                <div class="min-w-[85vw] md:min-w-0 snap-center bg-white p-10 rounded-2xl shadow-sm border border-black/5 flex flex-col reveal reveal-delay-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex text-[#722024] gap-1">★★★★★</div>
+                        <span class="text-[10px] bg-red-50 text-[#722024] px-2 py-1 rounded font-bold uppercase tracking-wider">Verificada</span>
+                    </div>
+                    <p class="italic mb-8 text-[#2D2D2D]/70 leading-relaxed flex-grow">"Contratei para revisar meus contratos e descobrimos cláusulas que me colocavam em risco há anos. Hoje durmo tranquila sabendo que meu negócio está protegido."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-[#FDF0F1] flex items-center justify-center text-[#722024] font-serif font-bold">C</div>
+                        <p class="font-serif font-bold text-lg text-[#2D2D2D]">Carla S.</p>
+                    </div>
+                </div>
+                <div class="min-w-[85vw] md:min-w-0 snap-center bg-white p-10 rounded-2xl shadow-sm border border-black/5 flex flex-col reveal reveal-delay-3">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="flex text-[#722024] gap-1">★★★★★</div>
+                        <span class="text-[10px] bg-red-50 text-[#722024] px-2 py-1 rounded font-bold uppercase tracking-wider">Verificado</span>
+                    </div>
+                    <p class="italic mb-8 text-[#2D2D2D]/70 leading-relaxed flex-grow">"Atendimento 100% online, ágil e extremamente competente. O Dr. Leozeras resolveu em semanas um problema que eu achava que levaria anos."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-[#FDF0F1] flex items-center justify-center text-[#722024] font-serif font-bold">F</div>
+                        <p class="font-serif font-bold text-lg text-[#2D2D2D]">Felipe A.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center gap-2 mt-6 md:hidden" id="dotsContainer">
+                <span class="w-2 h-2 rounded-full bg-[#722024]"></span>
+                <span class="w-2 h-2 rounded-full bg-[#722024]/30"></span>
+                <span class="w-2 h-2 rounded-full bg-[#722024]/30"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 md:py-32 px-6 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="text-[#722024] uppercase tracking-[0.3em] text-xs mb-4 font-bold">❓ Dúvidas Frequentes</p>
+                <h2 class="text-3xl md:text-5xl font-serif text-[#2D2D2D]">Perguntas que todo empresário tem</h2>
+                <div class="h-px bg-[#722024] w-16 mx-auto mt-8"></div>
+            </div>
+            <div class="space-y-3 reveal">
+                <div class="faq-item border border-black/8 rounded-2xl overflow-hidden">
+                    <div class="faq-q flex justify-between items-center p-6 cursor-pointer border-l-4 border-transparent transition-all">
+                        <span class="font-semibold text-[#2D2D2D] text-sm pr-4">Minha empresa precisa de um advogado mesmo sem estar em processo?</span>
+                        <span class="faq-icon text-[#722024] text-2xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6 text-[#2D2D2D]/60 text-sm leading-relaxed">Sim! A advocacia preventiva é muito mais barata do que a litigiosa. Contratos mal feitos, sócios sem acordo claro e ausência de compliance podem custar muito mais do que uma assessoria jurídica contínua.</div>
+                </div>
+                <div class="faq-item border border-black/8 rounded-2xl overflow-hidden">
+                    <div class="faq-q flex justify-between items-center p-6 cursor-pointer border-l-4 border-transparent transition-all">
+                        <span class="font-semibold text-[#2D2D2D] text-sm pr-4">Atende empresas de qual porte?</span>
+                        <span class="faq-icon text-[#722024] text-2xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6 text-[#2D2D2D]/60 text-sm leading-relaxed">Atendemos desde MEIs e pequenas empresas até médias e grandes corporações. Cada empresa tem suas necessidades específicas e o atendimento é sempre personalizado.</div>
+                </div>
+                <div class="faq-item border border-black/8 rounded-2xl overflow-hidden">
+                    <div class="faq-q flex justify-between items-center p-6 cursor-pointer border-l-4 border-transparent transition-all">
+                        <span class="font-semibold text-[#2D2D2D] text-sm pr-4">O atendimento é presencial ou online?</span>
+                        <span class="faq-icon text-[#722024] text-2xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6 text-[#2D2D2D]/60 text-sm leading-relaxed">Os dois! Estamos sediados em Ribeirão Preto/SP para atendimento presencial, e oferecemos atendimento 100% online para clientes em todo o Brasil via WhatsApp e videochamada.</div>
+                </div>
+                <div class="faq-item border border-black/8 rounded-2xl overflow-hidden">
+                    <div class="faq-q flex justify-between items-center p-6 cursor-pointer border-l-4 border-transparent transition-all">
+                        <span class="font-semibold text-[#2D2D2D] text-sm pr-4">Como funciona a primeira consulta?</span>
+                        <span class="faq-icon text-[#722024] text-2xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6 text-[#2D2D2D]/60 text-sm leading-relaxed">A primeira consulta é gratuita e sem compromisso. Você apresenta sua situação, entendemos suas necessidades e apresentamos as melhores soluções jurídicas para o seu caso.</div>
+                </div>
+                <div class="faq-item border border-black/8 rounded-2xl overflow-hidden">
+                    <div class="faq-q flex justify-between items-center p-6 cursor-pointer border-l-4 border-transparent transition-all">
+                        <span class="font-semibold text-[#2D2D2D] text-sm pr-4">O que é blindagem patrimonial e minha empresa precisa?</span>
+                        <span class="faq-icon text-[#722024] text-2xl font-light flex-shrink-0">+</span>
+                    </div>
+                    <div class="faq-answer px-6 pb-6 text-[#2D2D2D]/60 text-sm leading-relaxed">Blindagem patrimonial é o conjunto de estratégias jurídicas que protegem seu patrimônio pessoal das dívidas e riscos da empresa. Qualquer empresário com bens pessoais a proteger deve considerar essa estruturação.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-20 px-6 bg-[#F9F7F2]">
+        <div class="max-w-5xl mx-auto bg-[#2D2D2D] rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row shadow-2xl reveal">
+            <div class="md:w-1/2 p-12 md:p-20 text-white flex flex-col justify-center">
+                <h2 class="text-3xl md:text-5xl font-serif mb-6 leading-tight">Sua empresa merece proteção de verdade.</h2>
+                <p class="text-white/70 mb-10 text-lg leading-relaxed">Consulta gratuita e sem compromisso. Em minutos você saberá exatamente o que fazer para proteger seu negócio.</p>
+                <a href="https://wa.me/5534991812371?text=Olá+Dr.+Leozeras!+Vi+seu+site+e+quero+agendar+uma+consulta+gratuita.+%F0%9F%98%8A" target="_blank" class="wa-button w-full text-lg py-5 min-h-[48px] justify-center">📲 Consulta gratuita agora</a>
+                <p class="text-white/40 text-[10px] mt-6 uppercase tracking-widest text-center">Atendimento online em todo o Brasil.</p>
+            </div>
+            <div class="md:w-1/2 min-h-[400px]">
+                <img src="[FOTO]" class="w-full h-full object-cover object-top" alt="Dr. Leozeras">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contato" class="bg-[#F9F7F2] pt-24 pb-12 px-6 border-t border-black/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="lg:col-span-2">
+                <div class="mb-6">
+                    <img src="[LOGO]" class="h-20 w-auto" alt="Logo Dr. Leozeras">
+                </div>
+                <p class="text-[#2D2D2D]/60 max-w-sm leading-relaxed mb-6 text-sm">Especialista em Direito Empresarial com 16 anos de experiência. Proteção jurídica estratégica para empresas que querem crescer com segurança.</p>
+                <a href="https://instagram.com/lalvees" target="_blank" class="text-[#722024] text-sm font-semibold hover:underline">📷 @lalvees</a>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-6 text-[#2D2D2D]">Links Rápidos</h4>
+                <ul class="space-y-3 text-[#2D2D2D]/60 text-sm">
+                    <li><a href="#especialidades" class="hover:text-[#722024] transition-colors">Especialidades</a></li>
+                    <li><a href="#sobre" class="hover:text-[#722024] transition-colors">Sobre o Dr. Leozeras</a></li>
+                    <li><a href="#depoimentos" class="hover:text-[#722024] transition-colors">Depoimentos</a></li>
+                    <li><a href="#faq" class="hover:text-[#722024] transition-colors">FAQ</a></li>
+                    <li><a href="https://wa.me/5534991812371?text=Olá+Dr.+Leozeras!+Vi+seu+site+e+quero+agendar+uma+consulta+gratuita.+%F0%9F%98%8A" target="_blank" class="hover:text-[#722024] transition-colors">(34) 99181-2371</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-6 text-[#2D2D2D]">Contato</h4>
+                <ul class="space-y-3 text-[#2D2D2D]/60 text-sm">
+                    <li class="flex items-start gap-2"><span class="text-[#722024]">📍</span>Rua Diva Paranaiba de Andrade, 264<br>Ribeirão Preto — SP</li>
+                    <li class="flex items-center gap-2"><span class="text-[#722024]">📱</span>(34) 99181-2371</li>
+                    <li class="flex items-center gap-2"><span class="text-[#722024]">💻</span>Atendimento online Brasil todo</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-black/40 uppercase tracking-widest text-center md:text-left">
+            <p>© 2026 Dr. Leozeras — Advocacia Empresarial. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <strong style="color:#722024">DI-HALI DIGITAL</strong></p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5534991812371?text=Olá+Dr.+Leozeras!+Vi+seu+site+e+quero+agendar+uma+consulta+gratuita.+%F0%9F%98%8A" target="_blank" class="wa-float fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl z-50">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <script>
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Contador
+        function animateCounter(el, target) {
+            let current = 0;
+            const step = Math.ceil(target / 80);
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) { current = target; clearInterval(timer); }
+                el.textContent = '+' + current.toLocaleString('pt-BR');
+            }, 20);
+        }
+        const counterObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting && e.target.dataset.target) {
+                    animateCounter(e.target, parseInt(e.target.dataset.target));
+                    counterObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
+
+        // FAQ
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
+        });
+
+        // Menu Mobile
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            document.body.style.overflow = !mobileMenu.classList.contains('hidden') ? 'hidden' : '';
+        });
+        function closeMenu() {
+            hamburger.classList.remove('open');
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Dots depoimentos
+        const slider = document.getElementById('depSlider');
+        const dots = document.querySelectorAll('#dotsContainer span');
+        if (slider && dots.length) {
+            slider.addEventListener('scroll', () => {
+                const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+                dots.forEach((d, i) => {
+                    d.style.backgroundColor = i === index ? '#722024' : 'rgba(114,32,36,0.3)';
+                });
+            });
+        }
+    </script>
+</body>
+</html>
